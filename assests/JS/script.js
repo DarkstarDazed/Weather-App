@@ -8,3 +8,18 @@ const forecastContainerEl = document.querySelector("#fiveday-container");
 const pastSearchButtonEl = document.querySelector("#past-search-buttons");
 const citySearchInputEl = document.querySelector("#searched-city");
 const forecastTitle = document.querySelector("#forecast");
+
+
+const formSumbitHandler = function(event) {
+    event.preventDefault();
+
+
+
+}
+
+
+
+
+
+citySubmitEl.addEventListener("submit", formSumbitHandler);
+pastSearchButtonEl.addEventListener("click", pastSearchHandler);
