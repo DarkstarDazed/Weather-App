@@ -19,7 +19,28 @@
 
     <!-- Search nav bar -->
     <main class="container-fluid">
-        
+        <div class="row">
+            <nav class="col-12 col-md-3 p-2 search-column">
+                <form class="form-inline" id="city-submit">
+                    <h4>City Search</h2>
+                        <input id="city" type="text" autofocus="true" class="form-control mr-sm-2 form-input" type="search" placeholder="Search by City Name" aria-label="Search">
+                        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Submit</button>
+                </form>
+                <div class="past-search border" id="past-search-buttons"></div>
+            </nav>
+            <section class="col-12 col-md-9">
+                <div class="row border selected-city" id="current-forecast">
+                    <div class="col-12">
+                        <h2 id="searched-city"></h2>
+                        <div id="current-weather-container" class="list-group"></div>
+                    </div>
+                </div>
+                <div class="row border" id="five-day-forecast">
+                    <h2 class="col-12" id="forecast"></h2>
+                    <div class="d-flex" id="fiveday-container"></div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Links -->
