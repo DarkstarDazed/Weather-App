@@ -22,6 +22,7 @@ const formSumbitHandler = function(event) {
         alert("Please enter a City!");
     }
 saveCity();
+searchedCity(city);
 
 }
 
@@ -172,6 +173,26 @@ const show5DayForecast = function(weather) {
         forecastContainerEl.appendChild(forecastEl);
     }
 
+}
+
+// function to search cities saved in local storage 
+const searchedCity = function(searchedCity) {
+
+    pastSearchEl = document.createElement("button");
+    pastSearchEl.textContent = searchedCity;
+    pastSearchEl.classList = "d-flex w-100 btn-dark border p-2";
+    pastSearchEl.setAttribute("data-city", searchedCity);
+    pastSearchEl.setAttribute("type", "submit");
+
+    pastSearchButtonEl.prepend(pastSearchEl);
+}
+
+const searchedCityHandler = function(event) {
+    let city = event.target.getAttribute("data-city")
+    if (city) {
+        getWeatherForecast(city);
+        get5DayForecast(city);
+    }
 }
 
 
