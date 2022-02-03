@@ -9,13 +9,28 @@ const pastSearchButtonEl = document.querySelector("#past-search-buttons");
 const citySearchInputEl = document.querySelector("#searched-city");
 const forecastTitle = document.querySelector("#forecast");
 
-
+// function to input value into form and save cities 
 const formSumbitHandler = function(event) {
     event.preventDefault();
-
-
-
+    let city = cityInputEl.value.trim();
+    if (city) {
+        getWeather(city);
+        get5Day(city);
+        cities.unshift({ city });
+        cityInputEl.value = "";
+    } else {
+        alert("Please enter a City!");
+    }
+saveCity();
 }
+
+const saveCity = function() {
+    localStorage.setItem("cities", JSON.stringify(cities));
+};
+
+
+
+
 
 
 
